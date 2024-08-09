@@ -13,7 +13,7 @@ export default async function Home() {
   const data = await response.json();
 
   return (
-    <div className="max-w-6xl m-auto">
+    <div className="max-w-6xl m-auto w-[95vw]">
       <Banner />
       <Suspense fallback={<Loader />}>
         <CardList books={data?.items} />

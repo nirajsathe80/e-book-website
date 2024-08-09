@@ -7,7 +7,7 @@ import Button from "../common/button";
 function Navbar() {
   return (
     <nav className="border-b-[0.5px]">
-      <div className="max-w-6xl w-full mx-auto flex justify-between items-center py-4">
+      <div className="max-w-6xl w-[95vw] mx-auto flex justify-between items-center py-4">
         <Link href={"/"} className="flex gap-1 items-center">
           <div className="relative">
             <Hexagon />

@@ -25,8 +25,15 @@ const Book = async function () {
     bookData.volumeInfo.authors[0];
 
   return (
-    <div className="mx-auto grid max-w-6xl grid-cols-3 gap-10 px-5 py-10">
-      <div className="col-span-2 pr-16 text-primary-950">
+    <div className="mx-auto grid max-w-6xl grid-cols-2  lg:grid-cols-3 gap-10 py-10 w-[95vw]">
+      <div className="flex justify-end">
+        <img
+          src={bookData?.volumeInfo?.imageLinks?.thumbnail}
+          alt={bookData?.volumeInfo?.title}
+          className="rounded-md border lg:h-auto"
+        />
+      </div>
+      <div className="col-span-2 text-primary-950">
         <h2 className="mb-5 text-5xl font-bold leading-[1.1]">
           {bookData?.volumeInfo?.title}
         </h2>
@@ -38,13 +45,6 @@ const Book = async function () {
           }}
         ></p>
         <DownloadButton fileLink={bookData.volumeInfo.previewLink} />
-      </div>
-      <div className="flex justify-end">
-        <img
-          src={bookData?.volumeInfo?.imageLinks?.thumbnail}
-          alt={bookData?.volumeInfo?.title}
-          className="rounded-md border"
-        />
       </div>
     </div>
   );
