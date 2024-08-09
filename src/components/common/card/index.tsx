@@ -10,7 +10,7 @@ const Card = ({ book }: { book: any }) => {
     book.volumeInfo.authors &&
     book.volumeInfo.authors[0];
   return (
-    <div className="flex gap-5 border p-5 shadow-md rounded">
+    <div className="flex gap-5 border-[0.5px] p-5 shadow-md rounded">
       <img
         src={book?.volumeInfo?.imageLinks?.smallThumbnail ?? ""}
         alt={book?.title}
