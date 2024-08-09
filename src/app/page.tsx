@@ -4,19 +4,12 @@ import Banner from "@/components/home-banner";
 import { Suspense } from "react";
 
 export default async function Home() {
-  const response = await fetch(
-    "https://www.googleapis.com/books/v1/volumes?q=harry+potter&maxResults=24"
-  );
-  if (!response.ok) {
-    throw new Error("Error fetching");
-  }
-  const data = await response.json();
-
   return (
     <div className="max-w-6xl m-auto w-[95vw]">
       <Banner />
       <Suspense fallback={<Loader />}>
-        <CardList books={data?.items} />
+        {/* @ts-expect-error Server Component */}
+        <CardList />
       </Suspense>
     </div>
   );
